@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ability Enablers")]
     //Dash Things
-    public bool canDash;
+    public bool canDash = false;
     private float dashSpeed = 10f;
     private float dashCoolDown = 0.5f;
     private float dashWaitTime = 0f;
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             }
             transform.localRotation = rotation;
             rb.velocity = input * speed;
-            Debug.Log(input);
+            //Debug.Log(input);
             if (input != new Vector2(0,0))
             {
                 anim.SetFloat("Speed", 1);
@@ -81,34 +81,8 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetFloat("Speed", -1);
             }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if(dashReset <= 0f && dashWaitTime <= 0f && canDash && dashTimer <= 0)
-                {
-                    speed = dashSpeed;
-                    dashWaitTime = dashCoolDown;
-                    dashTimer = dashTimerTimer;
-                    anim.SetBool("isDashing", true);
-                }
-            }
-            if(dashWaitTime > 0)
-            {
-                dashWaitTime -= Time.deltaTime;
-                if(dashWaitTime <= 0)
-                {
-                    anim.SetBool("isDashing", false);
-                    speed = normalSpeed;
-                    dashReset = dashCoolDown;
-                }
-            }
-            if(dashReset > 0)
-            {
-                dashReset -= Time.deltaTime;
-            }
-            if(dashTimer > 0)
-            {
-                dashTimer -= Time.deltaTime;
-            }
+            
+            Dashing();
             
         }
     }
@@ -125,5 +99,36 @@ public class PlayerController : MonoBehaviour
         weaponTest.transform.position = centerPoint + Vector3.ClampMagnitude(offset, distance);
     }
 
+    private void Dashing()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (dashReset <= 0f && dashWaitTime <= 0f && canDash && dashTimer <= 0)
+            {
+                speed = dashSpeed;
+                dashWaitTime = dashCoolDown;
+                dashTimer = dashTimerTimer;
+                anim.SetBool("isDashing", true);
+            }
+        }
+        if (dashWaitTime > 0)
+        {
+            dashWaitTime -= Time.deltaTime;
+            if (dashWaitTime <= 0)
+            {
+                anim.SetBool("isDashing", false);
+                speed = normalSpeed;
+                dashReset = dashCoolDown;
+            }
+        }
+        if (dashReset > 0)
+        {
+            dashReset -= Time.deltaTime;
+        }
+        if (dashTimer > 0)
+        {
+            dashTimer -= Time.deltaTime;
+        }
+    }
 
 }
