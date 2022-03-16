@@ -165,7 +165,7 @@ MonoBehaviour:
   anim: {fileID: 9161640011678213686}
   gunArm: {fileID: 6630886518604870692}
   weaponTransform: {fileID: 9161640011850810488}
-  canDash: 1
+  canDash: 0
   centerPoint: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   weaponTest: {fileID: 6630886518604870699}

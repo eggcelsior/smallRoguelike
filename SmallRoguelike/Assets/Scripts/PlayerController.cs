@@ -158,4 +158,14 @@ public class PlayerController : MonoBehaviour
         else if (sm < (double)min * (double)min) return v.normalized * min;
         return v;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case "dodge":
+                canDash = true;
+                Destroy(other.gameObject);
+                break;
+        }
+    }
 }
