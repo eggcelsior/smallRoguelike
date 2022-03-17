@@ -10,5 +10,5 @@ public class Weapon : ScriptableObject
     public int rarity;
     public Sprite sprite;
 
-    public float damage;
+    public int damage;
 }

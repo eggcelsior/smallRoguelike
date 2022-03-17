@@ -12,7 +12,7 @@ public class WeaponController : MonoBehaviour
     private string description;
     private int rarity;
     private Sprite sprite;
-    private float damage;
+    public int damage;
     private BoxCollider2D hitCollider;
     private float timeBtwAttack;
     public float startTimeBtwAttack;
@@ -45,7 +45,7 @@ public class WeaponController : MonoBehaviour
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    //enemiesToDamage[i].GetComponent<EnemyController>.TakeDamage(damage);
+                    enemiesToDamage[i].GetComponent<EnemyController>().TakeDamage(damage);
                 }
                 Debug.Log("attacked at " + Time.time);
 

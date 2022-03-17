@@ -7,6 +7,7 @@ TagManager:
   - player
   - ItemDrop
   - dodge
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Bullet
+  - Player
   - 
   - 
   - 
