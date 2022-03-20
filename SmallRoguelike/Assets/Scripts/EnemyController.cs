@@ -7,16 +7,23 @@ public class EnemyController : MonoBehaviour
 {
     public int health;
     public float shootRange;
-    public float aggroRange;
+    public float maxAggroRange;
+    public float minAggroRange;
     public float shootRate;
     public GameObject bullet;
     public Transform firepoint;
+
+    private SpriteRenderer sr;
 
     [Header("Slider Things")]
     public Slider slider;
     public Color low;
     public Color high;
     public Vector3 offset;
+    
+    [Header("Enemy Type Differentiators")] //Find a way to use an enum for this
+    public bool runAndShoot;
+    public bool walkTowardsAndBounceOff;
 
     private Rigidbody2D rb;
     private Vector3 direction;
@@ -26,6 +33,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         slider.maxValue = health;
     }
 
@@ -46,26 +54,34 @@ public class EnemyController : MonoBehaviour
     }
     private void StateSelector()
     {
-        if(Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= shootRange)
+        if (runAndShoot)
         {
-            shootCounter -= Time.deltaTime;
-            if(shootCounter <= 0f)
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= shootRange)
             {
-                shootCounter = shootRate;
-                Instantiate(bullet, firepoint.position, transform.rotation);
-                //Play sound effect or something idk
+                shootCounter -= Time.deltaTime;
+                if (shootCounter <= 0f)
+                {
+                    shootCounter = shootRate;
+                    Instantiate(bullet, firepoint.position, transform.rotation);
+                    //Play sound effect or something idk
+                }
+            }
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= maxAggroRange &&
+                Vector3.Distance(transform.position, PlayerController.instance.transform.position) >= minAggroRange && sr.isVisible) //This should be cleaned up using bools
+            {
+                direction = PlayerController.instance.transform.position - transform.position;
+                direction.Normalize();
+                rb.velocity = direction;
+            }
+            else
+            {
+                rb.velocity = Vector3.zero;
             }
         }
-        if(Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= aggroRange)
+        /*if (walkTowardsAndBounceOff)
         {
-            direction = PlayerController.instance.transform.position - transform.position;
-            direction.Normalize();
-            rb.velocity = direction;
-        }
-        else
-        {
-            rb.velocity = Vector3.zero;
-        }
+            
+        }*/
     }
 
     public void HealthBar()
@@ -79,9 +95,9 @@ public class EnemyController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, aggroRange);
+        Gizmos.DrawWireSphere(transform.position, maxAggroRange);
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, shootRange);
+        Gizmos.DrawWireSphere(transform.position, minAggroRange);
     }
 
 }
