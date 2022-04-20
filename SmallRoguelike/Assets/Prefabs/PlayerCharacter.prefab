@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 1604077465}
   - component: {fileID: 1604077467}
   m_Layer: 0
-  m_Name: Sword_Default
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43206e9b759eda646b81a81db9616fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: 38f4561109185664c9d0bf31f3fb057f, type: 2}
   name_: 
-  damage: 0
+  damage: 1
   startTimeBtwAttack: 1
   attackPos: {fileID: 1569493916}
   whatIsEnemies:
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  speed: 2
+  speed: 3
   canMove: 1
   anim: {fileID: 9161640011678213686}
   gunArm: {fileID: 6630886518604870692}

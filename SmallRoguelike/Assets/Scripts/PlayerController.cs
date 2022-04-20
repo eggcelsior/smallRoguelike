@@ -162,6 +162,9 @@ public class PlayerController : MonoBehaviour
     {
         switch (other.tag)
         {
+            case "enemyBullet":
+                SoundManager.instance.PlaySound(2);
+                break;
             case "dodge":
                 canDash = true;
                 Destroy(other.gameObject);

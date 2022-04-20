@@ -12,7 +12,7 @@ public class WeaponController : MonoBehaviour
     private string description;
     private int rarity;
     private Sprite sprite;
-    public int damage;
+    public float damage;
     private BoxCollider2D hitCollider;
     private float timeBtwAttack;
     public float startTimeBtwAttack;
@@ -33,6 +33,7 @@ public class WeaponController : MonoBehaviour
         sprite = weapon.sprite;
         damage = weapon.damage;
         sr.sprite = sprite;
+        startTimeBtwAttack = weapon.swingSpeed;
     }
 
     private void Update()
@@ -47,7 +48,7 @@ public class WeaponController : MonoBehaviour
                 {
                     enemiesToDamage[i].GetComponent<EnemyController>().TakeDamage(damage);
                 }
-                Debug.Log("attacked at " + Time.time);
+                //Debug.Log("attacked at " + Time.time);
 
                 timeBtwAttack = startTimeBtwAttack;
             }
@@ -58,6 +59,21 @@ public class WeaponController : MonoBehaviour
         }
         
     }
+
+    private void ResetStats()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        hitCollider = GetComponent<BoxCollider2D>();
+        name_ = weapon.name_;
+        description = weapon.description;
+        rarity = weapon.rarity;
+        sprite = weapon.sprite;
+        damage = weapon.damage;
+        sr.sprite = sprite;
+        startTimeBtwAttack = weapon.swingSpeed;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

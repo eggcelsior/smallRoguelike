@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - player
-  - ItemDrop
-  - dodge
-  - enemy
-  - enemyBullet
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Enemy
-  - Bullet
-  - Player
+  - PostProcessing
+  - 
+  - 
   - 
   - 
   - 

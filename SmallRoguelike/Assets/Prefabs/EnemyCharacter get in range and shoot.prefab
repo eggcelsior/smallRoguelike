@@ -216,6 +216,7 @@ MonoBehaviour:
   shootRate: 0.3
   bullet: {fileID: 992292966362582734, guid: b35979580b3253c44ae54c48b7e6514f, type: 3}
   firepoint: {fileID: 8563464244603711673}
+  canvas: {fileID: 8563464244378722174}
   slider: {fileID: 8563464242805862931}
   low: {r: 1, g: 0, b: 0, a: 1}
   high: {r: 0.13207841, g: 1, b: 0, a: 1}
@@ -302,7 +303,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -443,7 +444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8563464244378722173
 RectTransform:
   m_ObjectHideFlags: 0

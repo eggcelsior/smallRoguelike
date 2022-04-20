@@ -10,5 +10,6 @@ public class Weapon : ScriptableObject
     public int rarity;
     public Sprite sprite;
 
-    public int damage;
+    public float damage;
+    public float swingSpeed;
 }

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EZCameraShake;
 
 public class EnemyController : MonoBehaviour
 {
-    public int health;
+    public float health;
     public float shootRange;
     public float maxAggroRange;
     public float minAggroRange;
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public Transform firepoint;
 
     private SpriteRenderer sr;
+    public GameObject canvas;
 
     [Header("Slider Things")]
     public Slider slider;
@@ -35,6 +37,7 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         slider.maxValue = health;
+        canvas.SetActive(true);
     }
 
     // Update is called once per frame
@@ -43,8 +46,10 @@ public class EnemyController : MonoBehaviour
         StateSelector();
         HealthBar();
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
+        SoundManager.instance.PlaySound(1);
+        CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
         health -= damage;
         if(health <= 0f)
         {
@@ -62,6 +67,7 @@ public class EnemyController : MonoBehaviour
                 if (shootCounter <= 0f)
                 {
                     shootCounter = shootRate;
+                    SoundManager.instance.PlaySound(0);
                     Instantiate(bullet, firepoint.position, transform.rotation);
                     //Play sound effect or something idk
                 }
