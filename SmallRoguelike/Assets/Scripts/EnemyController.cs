@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
 
     private SpriteRenderer sr;
     public GameObject canvas;
+    public bool isBeingKnockedBack;
 
     [Header("Slider Things")]
     public Slider slider;
@@ -54,40 +55,44 @@ public class EnemyController : MonoBehaviour
         if(health <= 0f)
         {
             //play animation and maybe change this to a coroutine
+            SoundManager.instance.PlaySound(3);
             Destroy(gameObject);
         }
     }
     private void StateSelector()
     {
-        if (runAndShoot)
+        if (!isBeingKnockedBack)
         {
-            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= shootRange)
+            if (runAndShoot)
             {
-                shootCounter -= Time.deltaTime;
-                if (shootCounter <= 0f)
+                if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= shootRange)
                 {
-                    shootCounter = shootRate;
-                    SoundManager.instance.PlaySound(0);
-                    Instantiate(bullet, firepoint.position, transform.rotation);
-                    //Play sound effect or something idk
+                    shootCounter -= Time.deltaTime;
+                    if (shootCounter <= 0f)
+                    {
+                        shootCounter = shootRate;
+                        SoundManager.instance.PlaySound(0);
+                        Instantiate(bullet, firepoint.position, transform.rotation);
+                        //Play sound effect or something idk
+                    }
+                }
+                if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= maxAggroRange &&
+                    Vector3.Distance(transform.position, PlayerController.instance.transform.position) >= minAggroRange && sr.isVisible) //This should be cleaned up using bools
+                {
+                    direction = PlayerController.instance.transform.position - transform.position;
+                    direction.Normalize();
+                    rb.velocity = direction;
+                }
+                else
+                {
+                    rb.velocity = Vector3.zero;
                 }
             }
-            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= maxAggroRange &&
-                Vector3.Distance(transform.position, PlayerController.instance.transform.position) >= minAggroRange && sr.isVisible) //This should be cleaned up using bools
+            /*if (walkTowardsAndBounceOff)
             {
-                direction = PlayerController.instance.transform.position - transform.position;
-                direction.Normalize();
-                rb.velocity = direction;
-            }
-            else
-            {
-                rb.velocity = Vector3.zero;
-            }
+
+            }*/
         }
-        /*if (walkTowardsAndBounceOff)
-        {
-            
-        }*/
     }
 
     public void HealthBar()

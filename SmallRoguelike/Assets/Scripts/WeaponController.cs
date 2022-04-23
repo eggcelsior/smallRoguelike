@@ -47,6 +47,7 @@ public class WeaponController : MonoBehaviour
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
                     enemiesToDamage[i].GetComponent<EnemyController>().TakeDamage(damage);
+                    KnockbackController.instance.TriggerKnockback(enemiesToDamage[i].GetComponent<Collider2D>());
                 }
                 //Debug.Log("attacked at " + Time.time);
 
