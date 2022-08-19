@@ -6,6 +6,8 @@ using EZCameraShake;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField]
+    private bool showGizmo;
     public float health;
     public float shootRange;
     public float maxAggroRange;
@@ -105,10 +107,13 @@ public class EnemyController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, maxAggroRange);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, minAggroRange);
+        if (showGizmo)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, maxAggroRange);
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, minAggroRange);
+        }
     }
 
 }

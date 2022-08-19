@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 346363fa781a9b24f8df10d5726cfb9d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5757101400909889626
+    second: BlackCultistSpritesheet_0
+  - first:
+      213: -8509422379664898004
+    second: BlackCultistSpritesheet_1
+  - first:
+      213: -3176458939917747530
+    second: BlackCultistSpritesheet_2
+  - first:
+      213: -223658883066410976
+    second: BlackCultistSpritesheet_3
+  - first:
+      213: -5231974585926699757
+    second: BlackCultistSpritesheet_4
+  - first:
+      213: -2978181256206694337
+    second: BlackCultistSpritesheet_5
+  - first:
+      213: 2175752298272757222
+    second: BlackCultistSpritesheet_6
+  - first:
+      213: 4335712142362583887
+    second: BlackCultistSpritesheet_7
+  - first:
+      213: 8351889944198736476
+    second: BlackCultistSpritesheet_8
+  - first:
+      213: 4880950306700117491
+    second: BlackCultistSpritesheet_9
+  - first:
+      213: 8558768401332595444
+    second: BlackCultistSpritesheet_10
+  - first:
+      213: -5247674695340747280
+    second: BlackCultistSpritesheet_11
+  - first:
+      213: -1455587826040237098
+    second: BlackCultistSpritesheet_12
+  - first:
+      213: -111996040291220036
+    second: BlackCultistSpritesheet_13
+  - first:
+      213: -6931250682026286182
+    second: BlackCultistSpritesheet_14
+  - first:
+      213: 3824130496021228772
+    second: BlackCultistSpritesheet_15
+  - first:
+      213: 5645109118099048573
+    second: BlackCultistSpritesheet_16
+  - first:
+      213: 2743989080493229579
+    second: BlackCultistSpritesheet_17
+  - first:
+      213: -2840483525833275291
+    second: BlackCultistSpritesheet_18
+  - first:
+      213: 4979945847296137548
+    second: BlackCultistSpritesheet_19
+  - first:
+      213: -852364442560337723
+    second: BlackCultistSpritesheet_20
+  - first:
+      213: 745388004545633665
+    second: BlackCultistSpritesheet_21
+  - first:
+      213: 7163945793260249537
+    second: BlackCultistSpritesheet_22
+  - first:
+      213: 2668832775293985769
+    second: BlackCultistSpritesheet_23
+  - first:
+      213: -5152829052808600539
+    second: BlackCultistSpritesheet_24
+  - first:
+      213: 3899156710861084288
+    second: BlackCultistSpritesheet_25
+  - first:
+      213: 1083074989900664128
+    second: BlackCultistSpritesheet_26
+  - first:
+      213: -7586131461958772435
+    second: BlackCultistSpritesheet_27
+  - first:
+      213: -2319727620668991065
+    second: BlackCultistSpritesheet_28
+  - first:
+      213: 4895035480044198500
+    second: BlackCultistSpritesheet_29
+  - first:
+      213: 2474967824518750819
+    second: BlackCultistSpritesheet_30
+  - first:
+      213: 8561262882665509636
+    second: BlackCultistSpritesheet_31
+  - first:
+      213: 6118700702376242505
+    second: BlackCultistSpritesheet_32
+  - first:
+      213: 3135185713616022054
+    second: BlackCultistSpritesheet_33
+  - first:
+      213: 3524551779121580921
+    second: BlackCultistSpritesheet_34
+  - first:
+      213: -764431708770609421
+    second: BlackCultistSpritesheet_35
+  - first:
+      213: 3168358864031925040
+    second: BlackCultistSpritesheet_36
+  - first:
+      213: -4638503019719043462
+    second: BlackCultistSpritesheet_37
+  - first:
+      213: 8117196572652961275
+    second: BlackCultistSpritesheet_38
+  - first:
+      213: -1336440428557179919
+    second: BlackCultistSpritesheet_39
+  - first:
+      213: -6255203288437841766
+    second: BlackCultistSpritesheet_40
+  - first:
+      213: -7888942180001487826
+    second: BlackCultistSpritesheet_41
+  - first:
+      213: 2288479761268740031
+    second: BlackCultistSpritesheet_42
+  - first:
+      213: -6748108438442873200
+    second: BlackCultistSpritesheet_43
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 104
+        width: 11
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315b7f395da4467b0800000000000000
+      internalID: -5231974585926699757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 104
+        width: 11
+        height: 12
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38c2133def5ba6d0800000000000000
+      internalID: -2978181256206694337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 104
+        width: 11
+        height: 11
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e599c90033d13e10800000000000000
+      internalID: 2175752298272757222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 104
+        width: 11
+        height: 12
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43aeddc83b8b2c30800000000000000
+      internalID: 4335712142362583887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 78
+        width: 11
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d31d719596bccbe0800000000000000
+      internalID: -1455587826040237098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 78
+        width: 12
+        height: 12
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5013ad13c127ef0800000000000000
+      internalID: -111996040291220036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 78
+        width: 11
+        height: 12
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93a3a06a304fcf90800000000000000
+      internalID: -6931250682026286182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 78
+        width: 11
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec651ecc6a021530800000000000000
+      internalID: 3824130496021228772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 15
+        height: 15
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c16e652eb27b6360800000000000000
+      internalID: 7163945793260249537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 52
+        width: 15
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524e70ff6497d78b0800000000000000
+      internalID: -5152829052808600539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 52
+        width: 14
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0869472be569c1630800000000000000
+      internalID: 3899156710861084288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 52
+        width: 11
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d832607fad70f00800000000000000
+      internalID: 1083074989900664128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 26
+        width: 11
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403b3067b37bfc670800000000000000
+      internalID: 8561262882665509636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 28
+        width: 11
+        height: 12
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94da11cdeddf9e450800000000000000
+      internalID: 6118700702376242505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 29
+        width: 11
+        height: 12
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a66fcabca628b20800000000000000
+      internalID: 3135185713616022054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 27
+        width: 11
+        height: 14
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b43035b29b9e030800000000000000
+      internalID: 3524551779121580921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 11
+        height: 13
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90aeca20cd0139a0800000000000000
+      internalID: -6255203288437841766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 10
+        height: 10
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e246a6b72e8d48290800000000000000
+      internalID: -7888942180001487826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 13
+        height: 7
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf081ec73052cf10800000000000000
+      internalID: 2288479761268740031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackCultistSpritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 15
+        height: 6
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09eebc4d027e952a0800000000000000
+      internalID: -6748108438442873200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 982e15192d2872842814721c7d70c1eb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

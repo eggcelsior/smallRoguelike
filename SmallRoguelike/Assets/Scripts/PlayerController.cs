@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     public Camera cam;
+    public float health;
     [Header("Movement Things")]
     public float speed;
     public bool canMove;
@@ -169,6 +170,15 @@ public class PlayerController : MonoBehaviour
                 canDash = true;
                 Destroy(other.gameObject);
                 break;
+        }
+    }
+    public void takeDamage(float damage)
+    {
+        health -= damage;
+        SoundManager.instance.PlaySound(2);
+        if(health <= 0)
+        {
+            //Death sound and animation
         }
     }
 }

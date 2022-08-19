@@ -210,7 +210,7 @@ MonoBehaviour:
   attackPos: {fileID: 1569493916}
   whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8192
   attackRange: 0.35
   anim: {fileID: 0}
 --- !u!1 &9161640010775831901
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  health: 10
   speed: 3
   canMove: 1
   anim: {fileID: 9161640011678213686}

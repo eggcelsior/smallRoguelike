@@ -6,6 +6,7 @@ public class EnemyBullet : MonoBehaviour
 {
     public GameObject bulletSprite;
     public float speed;
+    public float damage;
     private Rigidbody2D rb;
     private Vector3 dir;
 
@@ -24,12 +25,18 @@ public class EnemyBullet : MonoBehaviour
         transform.position += dir * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //Damage Player
         Destroy(gameObject);
     }
-
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "player")
+        {
+            PlayerController.instance.takeDamage(damage);
+        }
+        Destroy(gameObject);
+    }
     private void OnBecameInvisible()
     {
         Destroy(gameObject);

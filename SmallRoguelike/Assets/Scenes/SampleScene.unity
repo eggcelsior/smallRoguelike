@@ -943,26 +943,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8563464243377358626, guid: b2300206dd60374459baeb6b498600a3,
-        type: 3}
-      propertyPath: runAndShoot
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8563464243377358627, guid: b2300206dd60374459baeb6b498600a3,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8563464243377358627, guid: b2300206dd60374459baeb6b498600a3,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8563464243377358627, guid: b2300206dd60374459baeb6b498600a3,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8563464243377358629, guid: b2300206dd60374459baeb6b498600a3,
         type: 3}
       propertyPath: m_Name

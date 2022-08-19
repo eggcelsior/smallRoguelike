@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - World
   - NoMask
+  - dodge
+  - enemy
+  - enemyBullet
+  - player
   layers:
   - Default
   - TransparentFX
@@ -29,10 +33,10 @@ TagManager:
   - MovingPlatform
   - FallingPlatform
   - Projectile
-  - Camera1
-  - Camera2
-  - Camera3
-  - Camera4
+  - EnemyProjectile
+  - 
+  - 
+  - 
   - 
   - 
   - 
