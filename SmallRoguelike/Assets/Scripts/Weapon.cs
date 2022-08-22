@@ -12,4 +12,5 @@ public class Weapon : ScriptableObject
 
     public float damage;
     public float swingSpeed;
+    public float knockbackForce;
 }

@@ -26,7 +26,7 @@ public class KnockbackController : MonoBehaviour
                 controller.isBeingKnockedBack = true;
                 enemy.isKinematic = false;
                 Vector2 difference = enemy.transform.position - transform.position;
-                difference = difference.normalized * thrust; //I don't know what the arbitrary 4 is for so experiment with this I guess
+                difference = difference.normalized * thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse); //What is forcemode2d
                 StartCoroutine(Knockback(enemy, controller));
             }

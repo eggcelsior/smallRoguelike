@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     public Transform firepoint;
 
     private SpriteRenderer sr;
+    public Animator anim;
     public GameObject canvas;
     public bool isBeingKnockedBack;
 
@@ -41,6 +42,7 @@ public class EnemyController : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
         slider.maxValue = health;
         canvas.SetActive(true);
+        anim.Play("EnemyAmogus_Spawn", 0);
     }
 
     // Update is called once per frame
@@ -84,10 +86,13 @@ public class EnemyController : MonoBehaviour
                     direction = PlayerController.instance.transform.position - transform.position;
                     direction.Normalize();
                     rb.velocity = direction;
+                    anim.SetBool("isMoving", true);
                 }
                 else
                 {
                     rb.velocity = Vector3.zero;
+                    if(anim.GetBool("isMoving"))
+                        anim.SetBool("isMoving", false);
                 }
             }
             /*if (walkTowardsAndBounceOff)

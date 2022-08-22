@@ -13,6 +13,7 @@ public class WeaponController : MonoBehaviour
     private int rarity;
     private Sprite sprite;
     public float damage;
+    public float knockbackForce;
     private BoxCollider2D hitCollider;
     private float timeBtwAttack;
     public float startTimeBtwAttack;
@@ -32,6 +33,8 @@ public class WeaponController : MonoBehaviour
         rarity = weapon.rarity;
         sprite = weapon.sprite;
         damage = weapon.damage;
+        knockbackForce = weapon.knockbackForce;
+        KnockbackController.instance.thrust = weapon.knockbackForce;
         sr.sprite = sprite;
         startTimeBtwAttack = weapon.swingSpeed;
     }
@@ -71,6 +74,8 @@ public class WeaponController : MonoBehaviour
         rarity = weapon.rarity;
         sprite = weapon.sprite;
         damage = weapon.damage;
+        knockbackForce = weapon.knockbackForce;
+        KnockbackController.instance.thrust = weapon.knockbackForce;
         sr.sprite = sprite;
         startTimeBtwAttack = weapon.swingSpeed;
     }
