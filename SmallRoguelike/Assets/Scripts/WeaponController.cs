@@ -23,6 +23,12 @@ public class WeaponController : MonoBehaviour
     public float attackRange;
     public Animator anim;
 
+    public static WeaponController instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
