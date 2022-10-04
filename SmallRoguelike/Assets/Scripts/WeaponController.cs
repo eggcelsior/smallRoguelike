@@ -70,7 +70,7 @@ public class WeaponController : MonoBehaviour
         
     }
 
-    private void ResetStats()
+    public void ResetStats()
     {
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();

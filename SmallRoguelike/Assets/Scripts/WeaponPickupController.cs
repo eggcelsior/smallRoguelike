@@ -84,8 +84,9 @@ public class WeaponPickupController : MonoBehaviour
                 //Play a fancy animation if you want lmao or not
             }
         }
-        if (Input.GetKeyDown(KeyCode.E) && collectable) //This may not work
+        if (Input.GetKeyDown(KeyCode.E) && collectable)
         {
+            Debug.Log("started collecting coroutine");
             tempItem = WeaponController.instance.weapon;
             WeaponController.instance.weapon = item;
             StartCoroutine(ChangeWeapon());
@@ -96,16 +97,17 @@ public class WeaponPickupController : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         openCanvas = true;
     }
-    private void OnTriggerEnter2D(Collider2D collision) //This may not work
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         collectable = true;
     }
-    private void OnTriggerExit2D(Collider2D collision) //This may not work
+    private void OnTriggerExit2D(Collider2D collision)
     {
         collectable = false;
     }
     private void RefreshStats()
     {
+        Debug.Log("starting refresh stats");
         nameField.text = item.name_;
         descriptionField.text = item.description + "\nDamage: " + item.damage + " Swing Speed: " + item.swingSpeed + " Knockback: " + item.knockbackForce;
         itemImage.sprite = item.sprite;
@@ -122,8 +124,9 @@ public class WeaponPickupController : MonoBehaviour
                 rarityImage.sprite = rarity3;
                 break;
         }
+        WeaponController.instance.ResetStats();
     }
-    private IEnumerator ChangeWeapon() //This may not work
+    private IEnumerator ChangeWeapon()
     {
         yield return new WaitForSeconds(0.2f);
         collectable = false;

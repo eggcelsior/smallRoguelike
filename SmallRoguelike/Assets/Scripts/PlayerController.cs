@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         normalSpeed = speed;
         rotation = transform.localRotation;
+        CameraController.instance.ChangeTarget(FindObjectOfType<PlayerTargeter>().gameObject);
     }
 
     // Update is called once per frame
