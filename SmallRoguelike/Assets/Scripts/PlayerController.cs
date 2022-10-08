@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     public Camera cam;
+    [Header("Stats")]
     public float health;
+    public float defense;
+    public float strength;
     [Header("Movement Things")]
     public float speed;
     public bool canMove;
@@ -16,6 +21,9 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public Transform gunArm;
     public Transform weaponTransform;
+
+    //    public Slider healthbarSlider;
+    //    public Vector3 offset = new Vector3(0f, 1.5f, 0f);
 
     [Header("Ability Enablers")]
     //Dash Things
@@ -50,6 +58,7 @@ public class PlayerController : MonoBehaviour
         normalSpeed = speed;
         rotation = transform.localRotation;
         CameraController.instance.ChangeTarget(FindObjectOfType<PlayerTargeter>().gameObject);
+        //healthbarSlider.maxValue = health;
     }
 
     // Update is called once per frame
@@ -58,6 +67,7 @@ public class PlayerController : MonoBehaviour
         PlayerMove();
         //WeaponRotating();
         WeaponPointing();
+        //HealthBar();
     }
     private void PlayerMove()
     {
@@ -164,8 +174,7 @@ public class PlayerController : MonoBehaviour
     {
         switch (other.tag)
         {
-            case "enemyBullet":
-                SoundManager.instance.PlaySound(2);
+            case "enemy":
                 break;
             case "dodge":
                 canDash = true;
@@ -173,13 +182,23 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    public void takeDamage(float damage)
+
+    public void TakeDamage(float damage)
     {
-        health -= damage;
-        SoundManager.instance.PlaySound(2);
-        if(health <= 0)
+        damage -= defense;
+        if (damage <= 0)
         {
-            //Death sound and animation
+            return;
         }
+        else
+        {
+            health -= damage;
+            SoundManager.instance.PlaySound(2);
+            //CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
+            if (health <= 0)
+            {
+                //Death sound and animation
+            }
+        }    
     }
 }

@@ -9,38 +9,23 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private bool showGizmo;
     public float health;
-    public float shootRange;
-    public float maxAggroRange;
-    public float minAggroRange;
-    public float shootRate;
-    public GameObject bullet;
-    public Transform firepoint;
+    public float damage;
 
     private SpriteRenderer sr;
     public Animator anim;
     public GameObject canvas;
     public bool isBeingKnockedBack;
-
-    [Header("Slider Things")]
-    public Slider slider;
-    public Color low;
-    public Color high;
-    public Vector3 offset;
     
-    [Header("Enemy Type Differentiators")] //Find a way to use an enum for this
     public bool runAndShoot;
-    public bool walkTowardsAndBounceOff;
 
     private Rigidbody2D rb;
     private Vector3 direction;
-    private float shootCounter;
-
-    // Start is called before the first frame update
+    private bool damagingPlayer = false;
+    public float damagePlayerInterval;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
-        slider.maxValue = health;
         canvas.SetActive(true);
         anim.Play("EnemyAmogus_Spawn", 0);
     }
@@ -49,7 +34,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         StateSelector();
-        HealthBar();
     }
     public void TakeDamage(float damage)
     {
@@ -69,56 +53,43 @@ public class EnemyController : MonoBehaviour
         {
             if (runAndShoot)
             {
-                if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= shootRange)
+                direction = PlayerController.instance.transform.position - transform.position;
+                direction.Normalize();
+                rb.velocity = direction;
+                if (sr.isVisible)
                 {
-                    shootCounter -= Time.deltaTime;
-                    if (shootCounter <= 0f)
-                    {
-                        shootCounter = shootRate;
-                        SoundManager.instance.PlaySound(0);
-                        Instantiate(bullet, firepoint.position, transform.rotation);
-                        //Play sound effect or something idk
-                    }
-                }
-                if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= maxAggroRange &&
-                    Vector3.Distance(transform.position, PlayerController.instance.transform.position) >= minAggroRange && sr.isVisible) //This should be cleaned up using bools
-                {
-                    direction = PlayerController.instance.transform.position - transform.position;
-                    direction.Normalize();
-                    rb.velocity = direction;
                     anim.SetBool("isMoving", true);
                 }
-                else
-                {
-                    rb.velocity = Vector3.zero;
-                    if(anim.GetBool("isMoving"))
-                        anim.SetBool("isMoving", false);
-                }
+
             }
-            /*if (walkTowardsAndBounceOff)
-            {
-
-            }*/
         }
-    }
 
-    public void HealthBar()
-    {
-        slider.transform.position = Camera.main.WorldToScreenPoint(transform.position + offset);
-        slider.gameObject.SetActive(health < slider.maxValue);
-        slider.value = health;
-        slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, slider.normalizedValue);
     }
-
-    private void OnDrawGizmosSelected()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (showGizmo)
+        if(other.tag == "player")
         {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position, maxAggroRange);
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(transform.position, minAggroRange);
+            damagingPlayer = true;
+            Debug.Log("Trigger Entered");
+            StartCoroutine(damagePlayer(damage));
         }
     }
-
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "player")
+        {
+            damagingPlayer = false;
+        }
+    }
+    public IEnumerator damagePlayer(float damage)
+    {
+        if (damagingPlayer)
+        {
+            PlayerController.instance.TakeDamage(damage);
+            Debug.Log("Damaged player " + damage);
+            yield return new WaitForSeconds(damagePlayerInterval);
+            StartCoroutine(damagePlayer(damage));
+        }
+        yield return 0;
+    }
 }
