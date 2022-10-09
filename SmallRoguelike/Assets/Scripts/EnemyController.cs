@@ -8,7 +8,9 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField]
     private bool showGizmo;
+    [Header("Stats")]
     public float health;
+    public float defense;
     public float damage;
 
     private SpriteRenderer sr;
@@ -16,10 +18,10 @@ public class EnemyController : MonoBehaviour
     public GameObject canvas;
     public bool isBeingKnockedBack;
     
-    public bool runAndShoot;
+    public bool runTowards;
 
     private Rigidbody2D rb;
-    private Vector3 direction;
+    private Vector2 direction;
     private bool damagingPlayer = false;
     public float damagePlayerInterval;
     void Start()
@@ -38,9 +40,14 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         SoundManager.instance.PlaySound(1);
-        CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
-        health -= damage;
-        if(health <= 0f)
+        //CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f); Probably shouldn't do this due to the amount of enemies that will exist and be getting damaged at once.
+        health -= damage - defense;
+        damage -= defense;
+        if (damage <= 0)
+        {
+            damage = 0.5f;
+        }
+        if (health <= 0f)
         {
             //play animation and maybe change this to a coroutine
             SoundManager.instance.PlaySound(3);
@@ -51,7 +58,7 @@ public class EnemyController : MonoBehaviour
     {
         if (!isBeingKnockedBack)
         {
-            if (runAndShoot)
+            if (runTowards)
             {
                 direction = PlayerController.instance.transform.position - transform.position;
                 direction.Normalize();

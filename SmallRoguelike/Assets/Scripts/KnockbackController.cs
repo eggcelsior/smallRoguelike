@@ -41,7 +41,7 @@ public class KnockbackController : MonoBehaviour
             if(enemy != null)
             {
                 enemy.velocity = Vector2.zero;
-                enemy.isKinematic = true;
+                //enemy.isKinematic = true;
                 controller.isBeingKnockedBack = false;
             }
         }
