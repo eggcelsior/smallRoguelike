@@ -17,41 +17,46 @@ public class AbilityHolder : MonoBehaviour
 
     AbilityState state = AbilityState.ready;
 
-    public KeyCode key;
-
     void Update()
     {
-        switch (state)
+        if (ability != null && !ability.alwaysActive)
         {
-            case AbilityState.ready:
-                if (Input.GetKeyDown(key))
-                {
-                    ability.Activate();
-                    state = AbilityState.active;
-                    activeTime = ability.activeTime;
-                }
-                break;
-            case AbilityState.active:
-                if(activeTime > 0)
-                {
-                    activeTime -= Time.deltaTime;
-                }
-                else
-                {
-                    state = AbilityState.cooldown;
-                    cooldownTime = ability.cooldownTime;
-                }
-                break;
-            case AbilityState.cooldown:
-                if (cooldownTime > 0)
-                {
-                    cooldownTime -= Time.deltaTime;
-                }
-                else
-                {
-                    state = AbilityState.ready;
-                }
-                break;
+            switch (state)
+            {
+                case AbilityState.ready:
+                    if (Input.GetKeyDown(ability.key))
+                    {
+                        ability.Activate();
+                        state = AbilityState.active;
+                        activeTime = ability.activeTime;
+                    }
+                    break;
+                case AbilityState.active:
+                    if (activeTime > 0)
+                    {
+                        activeTime -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        state = AbilityState.cooldown;
+                        cooldownTime = ability.cooldownTime;
+                    }
+                    break;
+                case AbilityState.cooldown:
+                    if (cooldownTime > 0)
+                    {
+                        cooldownTime -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        state = AbilityState.ready;
+                    }
+                    break;
+            }
+        }
+        else if(ability != null)
+        {
+            ability.Activate();
         }
     }
 }
