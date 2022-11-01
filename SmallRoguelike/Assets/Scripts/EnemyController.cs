@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public float health;
     public float defense;
     public float damage;
+    public float speed;
 
     private SpriteRenderer sr;
     public Animator anim;
@@ -62,7 +63,7 @@ public class EnemyController : MonoBehaviour
             {
                 direction = PlayerController.instance.transform.position - transform.position;
                 direction.Normalize();
-                rb.velocity = direction;
+                rb.velocity = direction * speed;
                 if (sr.isVisible)
                 {
                     anim.SetBool("isMoving", true);
