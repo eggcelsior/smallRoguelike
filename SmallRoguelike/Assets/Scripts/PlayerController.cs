@@ -12,7 +12,12 @@ public class PlayerController : MonoBehaviour
     public float health;
     public float defense;
     public float strength;
-    public float level;
+    public int level;
+    [SerializeField]
+    private int xp = 0;
+    [SerializeField]
+    private int maxXP = 10;
+
     [Header("Movement Things")]
     public float speed;
     public bool canMove;
@@ -72,6 +77,7 @@ public class PlayerController : MonoBehaviour
         WeaponPointing();
         //HealthBar();
         closestEnemy = LevelManager.instance.GetEnemy(transform);
+        CheckXP();
     }
     private void PlayerMove()
     {
@@ -180,9 +186,11 @@ public class PlayerController : MonoBehaviour
         {
             case "enemy":
                 break;
-            case "dodge":
-                canDash = true;
-                Destroy(other.gameObject);
+            case "xp":
+                XP xpController = other.GetComponent<XP>();
+                xp += xpController.xpGive;
+                Destroy(xpController.gameObject);
+                SoundManager.instance.PlaySound(5);
                 break;
         }
     }
@@ -204,5 +212,15 @@ public class PlayerController : MonoBehaviour
                 //Death sound and animation
             }
         }    
+    }
+
+    private void CheckXP()
+    {
+        if(xp >= maxXP)
+        {
+            level++;
+            maxXP = maxXP + Random.Range(level, maxXP);
+            Debug.Log("Current Level is " + level + " maxXP is now " + maxXP + " maxXP multiplier is " + (level / 10));
+        }
     }
 }

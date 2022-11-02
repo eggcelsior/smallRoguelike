@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         canvas.SetActive(true);
-        anim.Play("EnemyAmogus_Spawn", 0);
+        //anim.Play("EnemyAmogus_Spawn", 0);
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        SoundManager.instance.PlaySound(1);
+        SoundManager.instance.PlaySound(0);
         //CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f); Probably shouldn't do this due to the amount of enemies that will exist and be getting damaged at once.
         health -= damage - defense;
         damage -= defense;
@@ -50,8 +50,8 @@ public class EnemyController : MonoBehaviour
         }
         if (health <= 0f)
         {
-            //play animation and maybe change this to a coroutine
-            SoundManager.instance.PlaySound(3);
+            //play animation and maybe change this to a coroutine 
+            SoundManager.instance.PlaySound(3); 
             Destroy(gameObject);
         }
     }
@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
                 rb.velocity = direction * speed;
                 if (sr.isVisible)
                 {
-                    anim.SetBool("isMoving", true);
+                    //anim.SetBool("isMoving", true);
                 }
 
             }

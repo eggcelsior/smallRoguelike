@@ -51,6 +51,7 @@ MonoBehaviour:
   health: 3
   defense: 0
   damage: 0.1
+  speed: 0.3
   anim: {fileID: 964878706100435497}
   canvas: {fileID: 8913882920504945579}
   isBeingKnockedBack: 0
@@ -90,7 +91,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029476285, y: -0.1495136}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -101,7 +102,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48104978, y: 0.7009728}
+  m_Size: {x: 0.42, y: 0.22}
   m_EdgeRadius: 0
 --- !u!61 &964878707021511217
 BoxCollider2D:
@@ -116,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02947628, y: -0.1495136}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -127,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.67}
+  m_Size: {x: 0.4, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &8913882920504945579
 GameObject:
