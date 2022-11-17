@@ -52,6 +52,12 @@ MonoBehaviour:
   defense: 0
   damage: 0.1
   speed: 0.3
+  drops:
+  - {fileID: 6160230884686028, guid: b7128670ec9b0304eae721a4189cdfeb, type: 3}
+  - {fileID: 6160230884686028, guid: b7128670ec9b0304eae721a4189cdfeb, type: 3}
+  - {fileID: 6160230884686028, guid: b7128670ec9b0304eae721a4189cdfeb, type: 3}
+  - {fileID: 6160230884686028, guid: b7128670ec9b0304eae721a4189cdfeb, type: 3}
+  - {fileID: 2911497811636081457, guid: 25cfbd0481454be45b538691f4ca3cca, type: 3}
   anim: {fileID: 964878706100435497}
   canvas: {fileID: 8913882920504945579}
   isBeingKnockedBack: 0

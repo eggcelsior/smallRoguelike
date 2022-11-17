@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
+//[CreateAssetMenu(menuName = "Abilites/Dash")]
 public class DashAbility : Ability
 {
     private float dashSpeed = 10f;

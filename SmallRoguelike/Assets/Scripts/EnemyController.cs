@@ -6,13 +6,14 @@ using EZCameraShake;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
+    //[SerializeField]
     private bool showGizmo;
     [Header("Stats")]
     public float health;
     public float defense;
     public float damage;
     public float speed;
+    public GameObject[] drops;
 
     private SpriteRenderer sr;
     public Animator anim;
@@ -51,7 +52,11 @@ public class EnemyController : MonoBehaviour
         if (health <= 0f)
         {
             //play animation and maybe change this to a coroutine 
-            SoundManager.instance.PlaySound(3); 
+            SoundManager.instance.PlaySound(3);
+            if(drops != null)
+            {
+                Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }

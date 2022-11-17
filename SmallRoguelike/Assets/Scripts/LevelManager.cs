@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public Wave[] waves;
     private void Awake()
     {
         instance = this;

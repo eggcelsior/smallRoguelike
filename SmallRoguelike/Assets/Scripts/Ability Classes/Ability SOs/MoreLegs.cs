@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Abilites/MoreLegs")]
 public class MoreLegs : Ability
 {
     private float speed = 1.5f;

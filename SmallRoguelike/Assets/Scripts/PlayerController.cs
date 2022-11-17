@@ -219,8 +219,19 @@ public class PlayerController : MonoBehaviour
         if(xp >= maxXP)
         {
             level++;
-            maxXP = maxXP + Random.Range(level, maxXP);
-            Debug.Log("Current Level is " + level + " maxXP is now " + maxXP + " maxXP multiplier is " + (level / 10));
+            //maxXP = maxXP + Random.Range(level, maxXP);
+            if(level > 0 && level < 20) //This is kind of the way Vampire Survivors does it
+            {
+                maxXP += 5;
+            } else if(level >= 20 && level < 40)
+            {
+                maxXP += 13;
+            } else if(level >= 40)
+            {
+                maxXP += 600;
+            }
+            SoundManager.instance.PlaySound(6);
+            Debug.Log("maxXP is now " + maxXP);
         }
     }
 }
