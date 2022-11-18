@@ -223,12 +223,21 @@ public class PlayerController : MonoBehaviour
             if(level > 0 && level < 20) //This is kind of the way Vampire Survivors does it
             {
                 maxXP += 5;
+                health += 1;
+                defense += 0.1f;
+                strength += 0.1f;
             } else if(level >= 20 && level < 40)
             {
                 maxXP += 13;
+                health += 1.5f;
+                defense += 0.5f;
+                strength += 0.5f;
             } else if(level >= 40)
             {
                 maxXP += 600;
+                health += 3;
+                defense += 0.5f;
+                strength += 1; //Multipliers for these stats? strength += 1 + (strength * strengthMultiplier); ??
             }
             SoundManager.instance.PlaySound(6);
             Debug.Log("maxXP is now " + maxXP);
