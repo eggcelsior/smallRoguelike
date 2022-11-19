@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8bbdc2faea2684a89f1e3b9a5a12d1, type: 3}
+  m_Name: StingerShot
+  m_EditorClassIdentifier: 
+  name: Stinger Shot
+  cooldownTime: 1
+  activeTime: 1
+  level: 0
+  alwaysActive: 0
+  autoFire: 1
+  key: 0
+  bullet: {fileID: 347024621815281126, guid: 58f9d01505ed3be458f79970a94414a1, type: 3}

@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42da3f54e35fde64dbfba84292bc2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 0}
+  ability: {fileID: 11400000, guid: 69b86b96471b033469c1b1723cddd25c, type: 2}
   cooldownTime: 0
   activeTime: 0
 --- !u!1 &819701466
@@ -1783,6 +1783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: health
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 622984001312315575, guid: 349f4c60a64fd4d44acf8ccb29acd26c,
+        type: 3}
+      propertyPath: strength
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349f4c60a64fd4d44acf8ccb29acd26c, type: 3}

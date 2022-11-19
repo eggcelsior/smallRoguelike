@@ -9,6 +9,7 @@ public class Ability : ScriptableObject
     public float activeTime;
     public float level;
     public bool alwaysActive;
+    public bool autoFire;
     public KeyCode key;
     public virtual void Activate()
     {

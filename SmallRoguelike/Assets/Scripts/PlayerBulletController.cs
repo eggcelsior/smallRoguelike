@@ -5,19 +5,29 @@ using UnityEngine;
 public class PlayerBulletController : MonoBehaviour
 {
     public float damage;
+    private float damageMultiplier;
     public float speed;
     public float lifeTime;
-    private Rigidbody2D rb;
+    public bool shouldPoint; //Should point towards nearest enemy
     private EnemyController enemy;
-    // Start is called before the first frame update
-    void Start()
+    private Transform target;
+    private Vector3 path;
+    public GameObject child;
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
+        if (shouldPoint)
+        {
+            target = LevelManager.instance.closestEnemy;
+            path = (target.position - transform.position);
+            child.transform.Rotate(0,0, Mathf.Atan2(path.y, path.x) * Mathf.Rad2Deg);
+            
+        }
+        ReadyMultipliers();
     }
-
     private void Update()
     {
-        rb.velocity = Vector2.right * speed * Time.deltaTime;
+        transform.Translate(path * speed * Time.deltaTime);
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0)
             Destroy(gameObject);
@@ -28,9 +38,15 @@ public class PlayerBulletController : MonoBehaviour
         if(collision.gameObject.tag == "enemy")
         {
             enemy = collision.gameObject.GetComponent<EnemyController>();
-            enemy.TakeDamage(damage + (damage * PlayerController.instance.strength));
-            Debug.Log("Dealt " + damage + (damage * PlayerController.instance.strength) + " damage to enemy");
+            enemy.TakeDamage(damage); //+ (damage * PlayerController.instance.strength)
+            Debug.Log("Dealt " + damage + " damage to enemy");
             Destroy(gameObject);
         }
+    }
+    private void ReadyMultipliers()
+    {
+        damageMultiplier = damage;
+        damageMultiplier *= PlayerController.instance.strength;
+        damage += damageMultiplier;
     }
 }

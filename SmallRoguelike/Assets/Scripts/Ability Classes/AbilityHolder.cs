@@ -24,7 +24,7 @@ public class AbilityHolder : MonoBehaviour
             switch (state)
             {
                 case AbilityState.ready:
-                    if (Input.GetKeyDown(ability.key))
+                    if (Input.GetKeyDown(ability.key) || ability.autoFire)
                     {
                         ability.Activate();
                         state = AbilityState.active;
