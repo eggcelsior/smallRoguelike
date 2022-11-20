@@ -7,4 +7,5 @@ public class Wave : ScriptableObject
     public GameObject[] enemiesToSpawn;
     public float spawnRadius;
     public float time;
+    public float startTimeInSeconds; //when should this wave start
 }

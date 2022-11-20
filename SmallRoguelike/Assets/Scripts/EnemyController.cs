@@ -44,6 +44,7 @@ public class EnemyController : MonoBehaviour
         SoundManager.instance.PlaySound(0);
         //CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f); Probably shouldn't do this due to the amount of enemies that will exist and be getting damaged at once.
         health -= damage - defense;
+        StartCoroutine(ChangeColor());
         damage -= defense;
         if (damage <= 0)
         {
@@ -99,10 +100,17 @@ public class EnemyController : MonoBehaviour
         if (damagingPlayer)
         {
             PlayerController.instance.TakeDamage(damage);
-            Debug.Log("Damaged player " + damage);
+            //Debug.Log("Damaged player " + damage);
             yield return new WaitForSeconds(damagePlayerInterval);
             StartCoroutine(damagePlayer(damage));
         }
         yield return 0;
+    }
+    private IEnumerator ChangeColor()
+    {
+        Color defaultColor = sr.color;
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = defaultColor;
     }
 }

@@ -8,12 +8,16 @@ public class EnemySpawnController : MonoBehaviour
     public float time = 1.5f;
 
     public GameObject[] enemies;
-    private int whatWave = 0; //Determines what wave we're on to select the next one
+    public int whatWave; //Determines what wave we're on to select the next one
     public Wave wave;
-
+    private Wave nextWave;
+    private float timer;
     public void NewWave()
     {
         wave = LevelManager.instance.waves[whatWave];
+        nextWave = LevelManager.instance.waves[whatWave + 1];
+        timer = nextWave.startTimeInSeconds;
+        //Debug.Log(nextWave.startTimeInSeconds);
         spawnRadius = wave.spawnRadius;
         time = wave.time;
         enemies = wave.enemiesToSpawn;
@@ -21,8 +25,19 @@ public class EnemySpawnController : MonoBehaviour
 
     private void Start()
     {
+        whatWave = 0;
         NewWave();
         StartCoroutine(SpawnEnemy());
+    }
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        if(timer <= 0f)
+        {
+            Debug.Log("Starting Next Wave");
+            whatWave++;
+            NewWave();
+        }
     }
 
     IEnumerator SpawnEnemy()

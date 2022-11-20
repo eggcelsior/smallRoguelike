@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -53,6 +54,10 @@ public class PlayerController : MonoBehaviour
     public float distance;
 
     private Transform closestEnemy;
+    //FOR TESTING\\
+    public TextMeshProUGUI _levelCount;
+    public float _PARange;
+    //END FOR TESTING\\
 
     //public SpriteRenderer rend;
     private void Awake()
@@ -78,6 +83,7 @@ public class PlayerController : MonoBehaviour
         //HealthBar();
         closestEnemy = LevelManager.instance.GetEnemy(transform);
         CheckXP();
+        _levelCount.text = level.ToString();
     }
     private void PlayerMove()
     {
@@ -200,18 +206,19 @@ public class PlayerController : MonoBehaviour
         damage -= defense;
         if (damage <= 0)
         {
-            return;
+            health -= 0.1f;
+            SoundManager.instance.PlaySound(2);
         }
         else
         {
             health -= damage;
             SoundManager.instance.PlaySound(2);
             //CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
-            if (health <= 0)
-            {
-                //Death sound and animation
-            }
-        }    
+        }
+        if (health <= 0)
+        {
+            //Death sound and animation
+        }
     }
 
     private void CheckXP()
@@ -220,18 +227,24 @@ public class PlayerController : MonoBehaviour
         {
             level++;
             //maxXP = maxXP + Random.Range(level, maxXP);
-            if(level > 0 && level < 20) //This is kind of the way Vampire Survivors does it
+            if(level > 0 && level < 10) //This is kind of the way Vampire Survivors does it
             {
                 maxXP += 5;
                 health += 1;
                 defense += 0.1f;
                 strength += 0.1f;
-            } else if(level >= 20 && level < 40)
+            } else if(level >= 10 && level < 20)
             {
                 maxXP += 13;
                 health += 1.5f;
                 defense += 0.5f;
                 strength += 0.5f;
+            }else if (level >= 20 && level < 40)
+            {
+                maxXP += 75;
+                health += 2f;
+                defense += 0.5f;
+                strength += 0.7f;
             } else if(level >= 40)
             {
                 maxXP += 600;
@@ -242,5 +255,10 @@ public class PlayerController : MonoBehaviour
             SoundManager.instance.PlaySound(6);
             Debug.Log("maxXP is now " + maxXP);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, _PARange);
     }
 }

@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bee77df95ab42845b477cce62ea9791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGizmo: 0
   health: 3
   defense: 0
-  damage: 0.1
+  damage: 3
   speed: 0.3
   drops:
   - {fileID: 6160230884686028, guid: b7128670ec9b0304eae721a4189cdfeb, type: 3}

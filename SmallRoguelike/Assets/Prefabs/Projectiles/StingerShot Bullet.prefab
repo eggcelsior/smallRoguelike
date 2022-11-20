@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  speed: 0.5
+  speed: 3
   lifeTime: 5
   shouldPoint: 1
   child: {fileID: 7214038220696992790}

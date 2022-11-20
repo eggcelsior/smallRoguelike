@@ -15,7 +15,9 @@ public class LevelManager : MonoBehaviour
     public Transform closestEnemy;
     private void Update()
     {
+        
         closestEnemy = GetEnemy(PlayerController.instance.transform);
+
     }
     public Transform GetEnemy(Transform item) //Finds closest enemy
     {

@@ -20,6 +20,7 @@ public class PlayerBulletController : MonoBehaviour
         {
             target = LevelManager.instance.closestEnemy;
             path = (target.position - transform.position);
+            path.Normalize();
             child.transform.Rotate(0,0, Mathf.Atan2(path.y, path.x) * Mathf.Rad2Deg);
             
         }
@@ -39,7 +40,7 @@ public class PlayerBulletController : MonoBehaviour
         {
             enemy = collision.gameObject.GetComponent<EnemyController>();
             enemy.TakeDamage(damage); //+ (damage * PlayerController.instance.strength)
-            Debug.Log("Dealt " + damage + " damage to enemy");
+            //Debug.Log("Dealt " + damage + " damage to enemy");
             Destroy(gameObject);
         }
     }
